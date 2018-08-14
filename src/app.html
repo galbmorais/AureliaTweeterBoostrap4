@@ -1,0 +1,26 @@
+<template>
+    <require from="./styles.css"></require>
+    <require from="./resources/elements/tweet"></require>
+  
+    <div class="container" style="padding-top: 20px">
+      
+      <h1>Aurelia Tweeter</h1>
+      <form>
+       
+        <div class="compose-container">
+            <div class="form-group row">
+              <textarea placeholder="Say something" value.bind="composedTweet" keypress.delegate="handleKeyPress($event)"></textarea>
+             <button class="btn btn-primary" type="button" disabled.bind="!composedTweet" click.delegate="createTweet()">Say it!</button>
+            </div>
+        </div>
+    
+        <tweet-feed class="form-group row">
+          <tweet repeat.for="tweet of tweets" tweet.bind="tweet"></tweet>
+        </tweet-feed>
+
+      </form>
+
+    </div>
+
+
+  </template>
