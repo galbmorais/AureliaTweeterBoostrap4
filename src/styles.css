@@ -52,6 +52,7 @@ button:disabled {
 }
 
 tweet-feed {
+  margin-bottom: 2px;
   background: #FFF;
   border: 1px solid #e1e8ed;
   display: block;

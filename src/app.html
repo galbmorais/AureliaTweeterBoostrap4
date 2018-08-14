@@ -5,13 +5,11 @@
     <div class="container" style="padding-top: 20px">
       
       <h1>Aurelia Tweeter</h1>
-      <form>
+      <form class="compose-container">
        
-        <div class="compose-container">
-            <div class="form-group row">
-              <textarea placeholder="Say something" value.bind="composedTweet" keypress.delegate="handleKeyPress($event)"></textarea>
-             <button class="btn btn-primary" type="button" disabled.bind="!composedTweet" click.delegate="createTweet()">Say it!</button>
-            </div>
+        <div class="form-group">
+          <textarea placeholder="Say something" value.bind="composedTweet" keypress.delegate="handleKeyPress($event)"></textarea>
+          <button class="btn btn-primary" style="margin-top: -20px;" type="button" disabled.bind="!composedTweet" click.delegate="createTweet()">Say it!</button>
         </div>
     
         <tweet-feed class="form-group">
