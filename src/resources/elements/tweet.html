@@ -2,10 +2,12 @@
 
   <div class="tweet-avatar"><img src.bind="tweet.avatar"></div>
   <div class="tweet-body">
-    <div class="tweet-meta"><strong>${tweet.name}</strong> 
+    <div class="tweet-meta">
+      <strong>${tweet.name}</strong> 
       <span>${tweet.handle}</span>
     </div>  
     <div class="tweet-content">${tweet.text}</div>
   </div>
-  <dismiss class="badge badge-danger" type="button" click.delegate="deleteTweet($this.id)">&times;</dismiss>
+  <dismiss class="badge badge-danger" type="button" click.delegate="deleteTweet($this)">&times;</dismiss>
+  
 </template>
