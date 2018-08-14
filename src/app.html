@@ -5,7 +5,6 @@
     <div class="container" style="padding-top: 20px">
       
       <h1>Aurelia Tweeter</h1>
-      <!-- <img src="http://davidlambl.github.io/images/aurelia_logo.png"></img> -->
       <form class=" conteiner form-group">
        
         <tweet-new class="row col-sm-10">
@@ -13,8 +12,8 @@
           <button class="btn btn-primary" type="button" disabled.bind="!composedTweet" click.delegate="createTweet()">Say it!</button>
         </tweet-new>
     
-        <tweet-feed>
-          <tweet repeat.for="tweet of tweets" tweet.bind="tweet"></tweet>
+        <tweet-feed repeat.for="tweet of tweets">
+          <tweet tweet.bind="tweet"></tweet>
         </tweet-feed>
 
       </form>

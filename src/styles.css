@@ -51,6 +51,11 @@ button:disabled {
   width: 100%;
 }
 
+dismiss {
+  height: 18px;
+  cursor: pointer;
+}
+
 tweet-feed {
   margin-top: 10px;
   background: #FFF;

@@ -2,24 +2,25 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
 
-const AVATAR = 'https://s3.amazonaws.com/uifaces/faces/twitter/sachagreif/128.jpg';
-const NAME = 'John Citizen';
-const HANDLE = '@johncitizen';
+const AVATAR = 'https://tinyurl.com/yb9d5vzk';
+const NAME = 'TechWow';
+const HANDLE = '@TechWow';
 
 export class App {
 
   attached() {
     $('[data-toggle="tooltip"]').tooltip();
   }
+
   composedTweet = null;
   tweets = [];
 
   constructor() {
     this.tweets = [
       {
-        avatar: 'https://pbs.twimg.com/profile_images/615392662233808896/EtxjSSKk_bigger.jpg',
-        name: 'TechCrunch',
-        handle: '@TechCrunch',
+        avatar: 'https://tinyurl.com/yb9d5vzk',
+        name: 'TechWow',
+        handle: '@TechWow',
         text: 'Naval Ravikant on China money into Silicon Valley: This trickle could become a tsunami'
       },
       {
@@ -29,15 +30,16 @@ export class App {
         text: 'This week has been such shit. The only thing that\'s made me happy is the impending STYG/Expire/KL tour and Shinsuke Nakamura entrance at NXT'
       },
       {
-        avatar: 'https://pbs.twimg.com/profile_images/668902554957316096/IpjBGyjC_bigger.jpg',
+        avatar: 'https://cde.peru.com//ima/0/1/6/5/9/1659406/611x458/foto-perfil.jpg',
         name: 'Chris Sacca',
         handle: '@sacca',
-        text: 'I want a sports channel that is only highlights. 100% plays of the day/week/month. No shows. No narrative. Who\'s with me?'
+        text: 'A photographer records events and tells stories using images.'
       }
     ];
   }
 
   createTweet() {
+
     this.tweets.unshift({
       avatar: AVATAR,
       name: NAME,
@@ -46,6 +48,10 @@ export class App {
     });
 
     this.composedTweet = null;
+  }
+
+  deleteTweet(tweet){
+    debugger;
   }
 
   handleKeyPress(evt) {
