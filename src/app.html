@@ -13,6 +13,7 @@
         </tweet-new>
     
         <tweet-feed repeat.for="tweet of tweets">
+          <dismiss class="badge badge-danger" style="float:right" type="button" click.delegate="deleteTweet($this)">&times;</dismiss>
           <tweet tweet.bind="tweet"></tweet>
         </tweet-feed>
 
