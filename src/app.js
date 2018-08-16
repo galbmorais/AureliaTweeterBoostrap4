@@ -80,7 +80,7 @@ export class App {
     this.tweetToEdit = true;
     let tweets = this.tweets; //array
     let id = tweet.tweet.id; //id de quem quero editar
-    this.composedTweet = tweet.tweet.text;
+    this.composedTweet = tweet.tweet.text; //composed recebe tweet
     //this.tweetToEdit.situation = true;
     //this.tweetToEdit.id = id;   
   }
