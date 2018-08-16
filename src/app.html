@@ -14,6 +14,7 @@
     
         <tweet-feed repeat.for="tweet of tweets">
           <dismiss class="badge badge-danger" style="float:right" type="button" click.delegate="deleteTweet($this)">&times;</dismiss>
+          <dismiss class="badge badge-info" style="float:right" type="button" click.delegate="editTweet($this)">Edit</dismiss>
           <tweet tweet.bind="tweet"></tweet>
         </tweet-feed>
 

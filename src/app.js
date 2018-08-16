@@ -13,6 +13,7 @@ export class App {
     $('[data-toggle="tooltip"]').tooltip();
   }
 
+  //tweetToEdit = [{situation:null, id:null}];
   composedTweet = null;
   tweets = [];
 
@@ -43,6 +44,8 @@ export class App {
   }
 
   createTweet() {
+    //if(this.tweetToEdit.situation == false){
+      
     this.tweets.unshift({
       id: this.tweets.length + 1,
       avatar: AVATAR,
@@ -50,6 +53,14 @@ export class App {
       handle: HANDLE,
       text: this.composedTweet
     });
+
+    // else {
+    //     debugger;
+    //     this.tweets[this.tweetToEdit.id].text = this.composedTweet;
+    // }
+    // this.tweetToEdit.situation = true;
+    // this.tweetToEdit.id = null; 
+
     this.composedTweet = null;
   }
 
@@ -58,11 +69,20 @@ export class App {
     let id = tweet.tweet.id; //id de quem quero remover
     let tweetToRemove = tweets.filter(function(item) {
       return item.id == id;
-    }); // retorna posicao no array
+    }); // retorna obj
     for(let tweet of tweetToRemove){
       let index = tweets.indexOf(tweet);    
       tweets.splice(index, 1); //remove tweet
     }   
+  }
+
+  editTweet(tweet){
+    this.tweetToEdit = true;
+    let tweets = this.tweets; //array
+    let id = tweet.tweet.id; //id de quem quero editar
+    this.composedTweet = tweet.tweet.text;
+    //this.tweetToEdit.situation = true;
+    //this.tweetToEdit.id = id;   
   }
 
 
