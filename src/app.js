@@ -2,7 +2,6 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
 
-
 const ID = 0;
 const AVATAR = 'https://tinyurl.com/yb9d5vzk';
 const NAME = 'TechWow';
@@ -44,7 +43,6 @@ export class App {
   }
 
   createTweet() {
-
     this.tweets.unshift({
       id: this.tweets.length + 1,
       avatar: AVATAR,
@@ -52,7 +50,6 @@ export class App {
       handle: HANDLE,
       text: this.composedTweet
     });
-
     this.composedTweet = null;
   }
 
