@@ -15,9 +15,12 @@ export class App {
 
   //tweetToEdit = [{situation:null, id:null}];
   composedTweet = null;
+  removed = null;
   tweets = [];
 
   constructor() {
+		this.myHeading = 'Aurelia Tweeter';
+
     this.tweets = [
       {
         id: 0,
@@ -73,6 +76,9 @@ export class App {
     for(let tweet of tweetToRemove){
       let index = tweets.indexOf(tweet);    
       tweets.splice(index, 1); //remove tweet
+
+      this.removed = true;
+      window.setTimeout(() => this.removed = false, 1000);
     }   
   }
 
