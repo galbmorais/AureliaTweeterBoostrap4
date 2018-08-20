@@ -65,7 +65,7 @@ export class App {
           let index = this.tweets.indexOf(this.tweetSelecionado);    
           tweets[index].text = this.composedTweet;
           this.edited = true;
-          window.setTimeout(() => this.edited = false, 2000); 
+          setTimeout(() => this.edited = false, 2000); 
         }
       }
     } else {
@@ -92,7 +92,7 @@ export class App {
       let index = tweets.indexOf(tweet);    
       tweets.splice(index, 1); //remove tweet
       this.removed = true;
-      window.setTimeout(() => this.removed = false, 1000);
+      setTimeout(() => this.removed = false, 1000);
     }   
   }
 
