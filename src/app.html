@@ -7,15 +7,18 @@
 
       <h1 textcontent.bind="myHeading"></h1>
       <form>
-       
+
         <tweet-new class="row col-sm-10">
           <textarea class="col-sm-8" placeholder="Say something" value.bind="composedTweet" keypress.delegate="handleKeyPress($event)"></textarea>
-          <button class="btn btn-primary" type="button" disabled.bind="!composedTweet" click.delegate="createTweet()">Say it!</button>
+          <button class="btn btn-primary" type="button" disabled.bind="!composedTweet" textcontent.bind="tweetBtn" click.delegate="createTweet()"></button>
         </tweet-new>
     
         <div id="remove" class="alert alert-success" role="alert" if.bind="removed" style="margin-top: 10px">
             <strong>Excluido!</strong> Seu Tweet foi removido.
-          </div>
+        </div>
+        <div id="edit" class="alert alert-success" role="alert" if.bind="edited" style="margin-top: 10px">
+          <strong>Editado!</strong> Seu Tweet foi editado.
+      </div>
 
         <tweet-feed repeat.for="tweet of tweets">
           <dismiss class="badge badge-danger" style="float:right" type="button" click.delegate="deleteTweet($this)">&times;</dismiss>
@@ -28,4 +31,4 @@
     </div>
 
   </template>
-  
+
