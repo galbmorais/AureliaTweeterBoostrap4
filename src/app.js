@@ -13,13 +13,17 @@ export class App {
     $('[data-toggle="tooltip"]').tooltip();
   }
 
-  //tweetToEdit = [{situation:null, id:null}];
+  tweetToEdit = [{situation:null, id:null}];
   composedTweet = null;
   removed = null;
+  edited = null;
   tweets = [];
+  lastId = 2;
+  tweetSelecionado;
 
   constructor() {
 		this.myHeading = 'Aurelia Tweeter';
+		this.tweetBtn = 'Say it !';
 
     this.tweets = [
       {
@@ -47,24 +51,30 @@ export class App {
   }
 
   createTweet() {
-    //if(this.tweetToEdit.situation == false){
-      
-    this.tweets.unshift({
-      id: this.tweets.length + 1,
-      avatar: AVATAR,
-      name: NAME,
-      handle: HANDLE,
-      text: this.composedTweet
-    });
-
-    // else {
-    //     debugger;
-    //     this.tweets[this.tweetToEdit.id].text = this.composedTweet;
-    // }
-    // this.tweetToEdit.situation = true;
-    // this.tweetToEdit.id = null; 
-
+    if(this.tweetToEdit.situation == true){
+      let tweets = this.tweets; //array  
+      let id = this.tweetToEdit.id;
+      for(this.tweetSelecionado of tweets){
+        if(this.tweetSelecionado.id == id){
+          let index = this.tweets.indexOf(this.tweetSelecionado);    
+          tweets[index].text = this.composedTweet;
+          this.edited = true;
+          window.setTimeout(() => this.edited = false, 2000); 
+        }
+      }
+    } else {
+      this.tweets.unshift({
+        id: this.lastId + 1,
+        avatar: AVATAR,
+        name: NAME,
+        handle: HANDLE,
+        text: this.composedTweet
+      });
+    }
     this.composedTweet = null;
+    this.tweetToEdit.situation = false;
+    this.tweetToEdit.id = null;
+
   }
 
   deleteTweet(tweet){
@@ -76,19 +86,17 @@ export class App {
     for(let tweet of tweetToRemove){
       let index = tweets.indexOf(tweet);    
       tweets.splice(index, 1); //remove tweet
-
       this.removed = true;
       window.setTimeout(() => this.removed = false, 1000);
     }   
   }
 
   editTweet(tweet){
-    this.tweetToEdit = true;
-    let tweets = this.tweets; //array
     let id = tweet.tweet.id; //id de quem quero editar
-    this.composedTweet = tweet.tweet.text; //composed recebe tweet
-    //this.tweetToEdit.situation = true;
-    //this.tweetToEdit.id = id;   
+    this.tweetToEdit.situation = true;
+    this.tweetToEdit.id = id;
+    this.composedTweet = tweet.tweet.text;
+    this.tweetSelecionado = tweet;
   }
 
 
