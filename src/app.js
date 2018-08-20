@@ -49,9 +49,15 @@ export class App {
       }
     ];
   }
+  default() {
+    this.composedTweet = null;
+    this.tweetToEdit.situation = false;
+    this.tweetToEdit.id = null;
+    this.tweetBtn = 'Say it !';
+  }
 
   createTweet() {
-    if(this.tweetToEdit.situation == true){
+    if (this.tweetToEdit.situation == true){
       let tweets = this.tweets; //array  
       let id = this.tweetToEdit.id;
       for(this.tweetSelecionado of tweets){
@@ -71,9 +77,7 @@ export class App {
         text: this.composedTweet
       });
     }
-    this.composedTweet = null;
-    this.tweetToEdit.situation = false;
-    this.tweetToEdit.id = null;
+    this.default();
 
   }
 
@@ -97,6 +101,7 @@ export class App {
     this.tweetToEdit.id = id;
     this.composedTweet = tweet.tweet.text;
     this.tweetSelecionado = tweet;
+    this.tweetBtn = 'Edit it !'
   }
 
 
@@ -110,3 +115,4 @@ export class App {
   }
 
 }
+
