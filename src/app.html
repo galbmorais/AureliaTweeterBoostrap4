@@ -8,9 +8,14 @@
       <h1 textcontent.bind="myHeading"></h1>
       <form>
 
-        <tweet-new class="row col-sm-10">
-          <textarea class="col-sm-8" placeholder="Say something" value.bind="composedTweet" keypress.delegate="handleKeyPress($event)"></textarea>
-          <button class="btn btn-primary" type="button" disabled.bind="!composedTweet" textcontent.bind="tweetBtn" click.delegate="createTweet()"></button>
+        <tweet-new class="row col-sm-12">
+          <textarea class="col-sm-6" placeholder="Say something" value.bind="composedTweet" keypress.delegate="handleKeyPress($event)"></textarea>
+          
+          <div class="btn-group" role="group">
+            <button class="btn btn-primary" type="button" disabled.bind="!composedTweet" textcontent.bind="tweetBtn" click.delegate="createTweet()"></button>
+            <button class="btn btn-warning" type="button" disabled.bind="composedTweet"  textcontent.bind="user" click.delegate="changeUser()"></button>           
+          </div>
+
         </tweet-new>
     
         <div id="remove" class="alert alert-success" role="alert" if.bind="removed" style="margin-top: 10px">
