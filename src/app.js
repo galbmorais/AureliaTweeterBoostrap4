@@ -76,6 +76,7 @@ export class App {
         handle: HANDLE,
         text: this.composedTweet
       });
+      this.lastId++;
     }
     this.default();
 
