@@ -1,39 +1,7 @@
 <template>
-    <require from="./styles.css"></require>
-    <require from="./resources/elements/tweet"></require>
- 
-  
-    <div class="container" style="padding-top: 20px">
 
-      <h1 textcontent.bind="myHeading"></h1>
-      <form>
+  <require from="./styles.css"></require>
+  <compose view-model="tweeter" view.bind="tweeter.html" model.bind="{ tittle : 'Tweeter Aurelia' }" ></compose>
 
-        <tweet-new class="row col-sm-12">
-          <textarea class="col-sm-6" placeholder="Say something" value.bind="composedTweet" keypress.delegate="handleKeyPress($event)"></textarea>
-          
-          <div class="btn-group" role="group">
-            <button class="btn btn-primary" type="button" disabled.bind="!composedTweet" textcontent.bind="tweetBtn" click.delegate="createTweet()"></button>
-            <button class="btn btn-warning" type="button" disabled.bind="composedTweet"  textcontent.bind="user" click.delegate="changeUser()"></button>           
-          </div>
-
-        </tweet-new>
-    
-        <div id="remove" class="alert alert-success" role="alert" if.bind="removed" style="margin-top: 10px">
-            <strong>Excluido!</strong> Seu Tweet foi removido.
-        </div>
-        <div id="edit" class="alert alert-success" role="alert" show.bind="edited" style="margin-top: 10px">
-          <strong>Editado!</strong> Seu Tweet foi editado.
-      </div>
-
-        <tweet-feed repeat.for="tweet of tweets"> <!-- ${tweet.name} -->
-          <dismiss class="badge badge-danger" style="float:right" type="button" click.delegate="deleteTweet($this)">&times;</dismiss>
-          <dismiss class="badge badge-info" style="float:right" type="button" click.delegate="editTweet($this)">Edit</dismiss>
-          <tweet tweet.bind="tweet"></tweet>
-        </tweet-feed>
-
-      </form>
-
-    </div>
-
-  </template>
+</template>
 
