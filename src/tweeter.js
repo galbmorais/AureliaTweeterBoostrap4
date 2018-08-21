@@ -52,8 +52,7 @@ export class Tweeter {
         handle: '@sacca',
         text: 'A photographer records events and tells stories using images.'
       }
-    ];
-  }
+    ];}
 
    changeUser() {
       let user = (this.aux + 1);
