@@ -1,4 +1,4 @@
-# AureliaTweeterBoostrap4
+# Aurelia Tweeter com Boostrap 4
 
 Estudo do Framework AureliaJs, seguindo estrutura do livro --Aurelia For Real World Applications-- com Bootstrap 4.0
 
