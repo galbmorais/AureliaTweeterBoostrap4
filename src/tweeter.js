@@ -7,7 +7,7 @@ export class Tweeter {
    }
 
    activate(model){
-    this.myHeading = model.tittle;
+    this.myHeading = model.title;
    } 
    
   users = [
