@@ -1,16 +1,17 @@
 <template>
   <require from="./resources/elements/tweet"></require>
-  
+
   <div class="container" style="padding-top: 20px">
     <h1 textcontent.bind="myHeading"></h1>
+    <!-- <h2 ref="myHeading2">HUHU</h2> -->
     <form>
   
       <tweet-new class="row col-sm-12">
-        <textarea class="col-sm-6" placeholder="Say something" value.bind="composedTweet" keypress.delegate="handleKeyPress($event)"></textarea>
+          <textarea class="col-sm-6"  ref="textField" placeholder="Say something" value.bind="composedTweet" keypress.delegate="handleKeyPress($event)"></textarea>
         
         <div class="btn-group" role="group">
-          <button class="btn btn-primary" type="button" disabled.bind="!composedTweet" textcontent.bind="tweetBtn" click.delegate="createTweet()"></button>
-          <button class="btn btn-warning" type="button" disabled.bind="composedTweet"  textcontent.bind="user" click.delegate="changeUser()"></button>           
+          <button class="btn btn-primary" href="#" type="button" disabled.bind="!composedTweet" textcontent.bind="tweetBtn" click.delegate="createTweet()"></button>
+          <button class="btn btn-warning" href="#" type="button" disabled.bind="composedTweet"  textcontent.bind="user" click.trigger="changeUser()" click.delegate="textField.focus()"></button>
         </div>
   
       </tweet-new>

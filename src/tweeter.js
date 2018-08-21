@@ -1,7 +1,13 @@
 export class Tweeter {
 
+   attached() {
+    // console.log(this.myHeading2); // will return the native DOM element
+    //alert('1');
+    this.textField.focus();
+   }
+
    activate(model){
-     this.myHeading = model.tittle;
+    this.myHeading = model.tittle;
    } 
    
   users = [
@@ -111,6 +117,7 @@ export class Tweeter {
     this.composedTweet = tweet.tweet.text;
     this.tweetSelecionado = tweet;
     this.tweetBtn = 'Edit it !'
+    this.textField.focus();
   }
 
 
