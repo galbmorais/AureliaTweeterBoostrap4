@@ -6,7 +6,7 @@ export class Tweeter {
     this.textField.focus();
    }
 
-   activate(model){
+   activate(model) {
     this.myHeading = model.title;
    } 
    
@@ -69,7 +69,7 @@ export class Tweeter {
   }
 
   createTweet() {
-    if (this.tweetToEdit.situation == true){
+    if (this.tweetToEdit.situation == true) {
       let tweets = this.tweets; //array
       let id = this.tweetToEdit.id;
       for(this.tweetSelecionado of tweets){
@@ -95,13 +95,13 @@ export class Tweeter {
 
   }
 
-  deleteTweet(tweet){
+  deleteTweet(tweet) {
     let tweets = this.tweets; //array
     let id = tweet.tweet.id; //id de quem quero remover
     let tweetToRemove = tweets.filter(function(item) {
       return item.id == id;
     }); // retorna obj
-    for(let tweet of tweetToRemove){
+    for (let tweet of tweetToRemove) { 
       let index = tweets.indexOf(tweet);
       tweets.splice(index, 1); //remove tweet
       this.removed = true;
@@ -109,7 +109,7 @@ export class Tweeter {
     }
   }
 
-  editTweet(tweet){
+  editTweet(tweet) {
     let id = tweet.tweet.id; //id de quem quero editar
     this.tweetToEdit.situation = true;
     this.tweetToEdit.id = id;
@@ -124,9 +124,7 @@ export class Tweeter {
     if (evt.keyCode === 13 && ths.composedTweet) {
       this.createTweet();
       evt.preventDefault();
-    } else {
-      return true;
-    }
+    } else { return true; }
   }
 
 }
