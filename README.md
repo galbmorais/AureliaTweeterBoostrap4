@@ -8,6 +8,6 @@ Segundo passo é a instalação do Npm mais recente no terminal do NodeJs  -->$ 
 
 Em seguida, ainda no Node, instale a Aurelia Cli com o comando --> $ npm install aurelia-cli -g
 
-Clone este projeto, entre na pasta dela e instale as dependÊncias necessárias com -->$ npm install
+Clone este projeto, entre nele, e instale as dependÊncias necessárias com -->$ npm install
 
 Em seguida pode executar o Projeto com -->$ au run
