@@ -19,13 +19,14 @@
   
       </tweet-new>
       
-      <my-alert id="remove" title="Excluído" message="Seu Tweet foi removido" if.bind="removed"></my-alert>
-      <my-alert id="edit" title="Editado" message="Seu Tweet foi editado" if.bind="edited"></my-alert>
+      <my-alert classe="alert alert-success" id="remove" title="Excluído" message="Seu Tweet foi removido" if.bind="removed"></my-alert>
+      <my-alert classe="alert alert-info" id="edit" title="Editado" message="Seu Tweet foi editado" if.bind="edited"></my-alert>
+      
       
       <!-- <div> ${users[0] | json} </div> -->
   
       <tweet-feed repeat.for="tweet of tweets"> <!-- ${tweet.name} -->
-        <dismiss class="badge badge-danger" style="float:right" type="button" click.delegate="deleteTweet($this)">&times;</dismiss>
+        <dismiss class="badge badge-danger" style="float:right" type="button" click.trigger="deleteTweet($this)">&times;</dismiss>
         <dismiss class="badge badge-info" style="float:right" type="button" click.delegate="editTweet($this)">Edit</dismiss>
         <tweet tweet.bind="tweet"></tweet>
       </tweet-feed>
