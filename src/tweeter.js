@@ -1,8 +1,6 @@
 export class Tweeter {
 
    attached() {
-    // console.log(this.myHeading2); // will return the native DOM element
-    //alert('1');
     this.textField.focus();
    }
 
@@ -100,7 +98,7 @@ export class Tweeter {
 
   createTweet() {
     if (this.tweetToEdit.situation == true) {
-      let tweets = this.tweets; //array
+      let tweets = this.tweets;
       let id = this.tweetToEdit.id;
       for(this.tweetSelecionado of tweets){
         if(this.tweetSelecionado.id == id){
@@ -126,21 +124,21 @@ export class Tweeter {
   }
 
   deleteTweet(tweet) {
-    let tweets = this.tweets; //array
-    let id = tweet.tweet.id; //id de quem quero remover
+    let tweets = this.tweets;
+    let id = tweet.tweet.id;
     let tweetToRemove = tweets.filter(function(item) {
       return item.id == id;
-    }); // retorna obj
+    });
     for (let tweet of tweetToRemove) { 
       let index = tweets.indexOf(tweet);
-      tweets.splice(index, 1); //remove tweet
+      tweets.splice(index, 1);
       this.removed = true;
       setTimeout(() => this.removed = false, 1000);
     }
   }
 
   editTweet(tweet) {
-    let id = tweet.tweet.id; //id de quem quero editar
+    let id = tweet.tweet.id; 
     this.tweetToEdit.situation = true;
     this.tweetToEdit.id = id;
     this.composedTweet = tweet.tweet.text;
