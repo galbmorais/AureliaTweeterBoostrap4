@@ -30,11 +30,10 @@ button {
   color: #000;
   cursor: pointer;
   display: inline-block;
-  height: 70px;
   margin-left: 8px;
   vertical-align: top;
-  width: 120px;
 }
+
 
 button:disabled {
   cursor: not-allowed;

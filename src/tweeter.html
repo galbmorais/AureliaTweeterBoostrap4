@@ -1,39 +1,77 @@
 <template>
-  
+
   <require from="./resources/elements/my-alert.html"></require>
   <require from="./resources/elements/tweet"></require>
   <require from="./resources/elements/json-value-converter"></require>
 
   <div class="container" style="padding-top: 20px">
-    <h1 textcontent.bind="myHeading"></h1>
+    
+    <div class="row col-sm-12">
+      <h1 textcontent.bind="myHeading"></h1>
+      <button class="btn btn-outline-primary btn-sm" href="#" type="button" style="height: 40px;" data-toggle="modal" data-target="#newUserModal">Novo User</button>
+    </div>
     <!-- <h2 ref="myHeading2">HUHU</h2> -->
-    <form>
+    <form role="form">
   
       <tweet-new class="row col-sm-12">
           <textarea class="col-sm-6"  ref="textField" placeholder="Say something" value.bind="composedTweet" keypress.delegate="handleKeyPress($event)"></textarea>&nbsp;
         
-        <!-- <div class="btn-group" role="group"> -->
-          <button class="btn btn-primary" href="#" type="button" disabled.bind="!composedTweet" textcontent.bind="tweetBtn" click.delegate="createTweet()"></button>&nbsp;
-          <button class="btn btn-warning" href="#" type="button" disabled.bind="composedTweet"  textcontent.bind="user" click.trigger="changeUser()" click.delegate="textField.focus()" style="width: 127px;"></button>
-        <!-- </div> -->
+        <div class="btn-group" role="group">
+          <button class="btn btn-primary" href="#" type="button" disabled.bind="!composedTweet" textcontent.bind="tweetBtn" click.delegate="createTweet()"></button>
+          <button class="btn btn-warning" href="#" type="button" disabled.bind="composedTweet"  textcontent.bind="user"     click.trigger="changeUser()" click.delegate="textField.focus()" style="width: 127px;"></button>
+        </div>
   
       </tweet-new>
       
-      <my-alert classe="alert alert-success" id="remove" title="Excluído" message="Seu Tweet foi removido" if.bind="removed"></my-alert>
-      <my-alert classe="alert alert-info" id="edit" title="Editado" message="Seu Tweet foi editado" if.bind="edited"></my-alert>
+      <my-alert id="remove" classe="alert alert-success" title="Excluído" message="Seu Tweet foi removido" if.bind="removed"></my-alert>
+      <my-alert id="edit"   classe="alert alert-info"    title="Editado"  message="Seu Tweet foi editado"  if.bind="edited"></my-alert>
       
       
       <!-- <div> ${users[0] | json} </div> -->
   
       <tweet-feed repeat.for="tweet of tweets"> <!-- ${tweet.name} -->
         <dismiss class="badge badge-danger" style="float:right" type="button" click.trigger="deleteTweet($this)">&times;</dismiss>
-        <dismiss class="badge badge-info" style="float:right" type="button" click.delegate="editTweet($this)">Edit</dismiss>
+        <dismiss class="badge badge-info"   style="float:right" type="button" click.delegate="editTweet($this)">Edit</dismiss>
         <tweet tweet.bind="tweet"></tweet>
       </tweet-feed>
   
     </form> 
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="newUserModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newUserModal">Novo Usuário</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="inputAvatar" placeholder="Link Avatar" value.bind="newLinkAvatar">
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                    <input type="text" class="form-control" id="inputName" placeholder="Nome" value.bind="newName">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" id="inputNickName" placeholder="@nickname" value.bind="newNickName">
+                  </div>
+                </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" click.trigger="novoUser()">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 </template>
+
+
