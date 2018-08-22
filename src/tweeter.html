@@ -2,6 +2,7 @@
   
   <require from="./resources/elements/my-alert.html"></require>
   <require from="./resources/elements/tweet"></require>
+  <require from="./resources/elements/json-value-converter"></require>
 
   <div class="container" style="padding-top: 20px">
     <h1 textcontent.bind="myHeading"></h1>
@@ -20,6 +21,8 @@
       
       <my-alert id="remove" title="Excluído" message="Seu Tweet foi removido" if.bind="removed"></my-alert>
       <my-alert id="edit" title="Editado" message="Seu Tweet foi editado" if.bind="edited"></my-alert>
+      
+      <!-- <div> ${users[0] | json} </div> -->
   
       <tweet-feed repeat.for="tweet of tweets"> <!-- ${tweet.name} -->
         <dismiss class="badge badge-danger" style="float:right" type="button" click.delegate="deleteTweet($this)">&times;</dismiss>
