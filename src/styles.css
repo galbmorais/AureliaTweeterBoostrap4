@@ -44,7 +44,7 @@ button:disabled {
   margin-bottom: 20px;
 }
 
-.container {
+.container, .form-group {
   margin: 0 auto;
   max-width: 620px;
   width: 100%;
