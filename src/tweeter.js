@@ -1,4 +1,5 @@
-import {Router} from 'aurelia-router';
+import {PLATFORM} from "aurelia-framework";
+PLATFORM.moduleName("./tweeter");
 
 export class Tweeter {
 
@@ -156,13 +157,6 @@ export class Tweeter {
       this.createTweet();
       evt.preventDefault();
     } else { return true; }
-  }
-
-  navigate(){
-    debugger;
-    //this.router.navigate("home");
-    Router.navigate('home');
-
   }
 
 }
