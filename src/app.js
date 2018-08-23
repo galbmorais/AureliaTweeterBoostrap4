@@ -4,8 +4,8 @@ export class App {
         config.title = 'Aurelia';
         config.map([
             { route: ['', ''], redirect: 'tweeter' },
-            { route: 'tweeter', name: 'tweets', moduleId: 'tweeter', nav: true,  title:'Tweeter' },
-            { route: 'teste',    name: 'teste',  moduleId: 'teste',  nav: true,  title:'Teste'   }
+            { route: 'tweeter',    name: 'tweets',      moduleId: 'tweeter',     nav: true,  title:'Tweeter' },
+            { route: 'teste', name: 'teste',  moduleId: 'teste',  nav: true,  title:'Formulário'}
         ]);
         this.router = router;
     }
