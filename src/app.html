@@ -1,8 +1,14 @@
-<template>
+<!-- <template>
   <require from="./styles.css"></require>
   <compose view-model="tweeter" view.bind="tweeter.html" model.bind="{ title : 'Tweeter' }"></compose>
   
-  <!-- <compose view-model="teste" view.bind="teste.html"></compose> -->
+  <compose view-model="teste" view.bind="teste.html"></compose>
+</template> -->
 
+<template>
+  <require from="./styles.css"></require>
+  <ul repeat.for="nav of router.navigation">
+      <li class="${nav.isActive ? 'active' : ''}"><a href.bind="nav.href">${nav.title}</a></li>
+  </ul>
+  <router-view></router-view>
 </template>
-

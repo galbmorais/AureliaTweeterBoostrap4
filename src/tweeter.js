@@ -6,7 +6,7 @@ export class Tweeter {
 
    activate(model) {
     this.myHeading = model.title;
-   } 
+  }
    
   users = [
     {avatar:'https://tinyurl.com/yb9d5vzk', name:'Tech Wow', handle:'@TechWow'},
@@ -59,25 +59,25 @@ export class Tweeter {
     ];}
 
    novoUser(){
-     for(let i =0; i < this.users.length; i++){
-      if(this.newNickName == this.users[i].handle) return alert("Dados não disponíveis");
-      }
-      if(this.newNickName[0] == '@'){
-        this.users.unshift({
-          avatar: this.newLinkAvatar,
-          name: this.newName,
-          handle: this.newNickName
-        });
-      } else{
-        this.users.unshift({
-          avatar: this.newLinkAvatar,
-          name: this.newName,
-          handle: '@'+this.newNickName
-        });
-      }
-     this.default();       
-     $('#newUserModal').modal('hide');
-   }
+      for(let i =0; i < this.users.length; i++){
+        if(this.newNickName == this.users[i].handle) return alert("Dados não disponíveis");
+        }
+        if(this.newNickName[0] == '@'){
+          this.users.unshift({
+            avatar: this.newLinkAvatar,
+            name: this.newName,
+            handle: this.newNickName
+          });
+        } else{
+          this.users.unshift({
+            avatar: this.newLinkAvatar,
+            name: this.newName,
+            handle: '@'+this.newNickName
+          });
+        }
+      this.default();       
+      $('#newUserModal').modal('hide');
+    }
 
    changeUser() {
       let user = (this.aux + 1);

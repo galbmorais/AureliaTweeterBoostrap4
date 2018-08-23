@@ -1,7 +1,8 @@
-import {transient} from 'aurelia-framework';
 
-@transient()
 export class ApiService {
+
+
+    
     get(path) {
         // Call our API
     }
