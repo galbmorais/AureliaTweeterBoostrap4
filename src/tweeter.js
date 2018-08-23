@@ -1,3 +1,5 @@
+import {Router} from 'aurelia-router';
+
 export class Tweeter {
 
    attached() {
@@ -154,6 +156,13 @@ export class Tweeter {
       this.createTweet();
       evt.preventDefault();
     } else { return true; }
+  }
+
+  navigate(){
+    debugger;
+    //this.router.navigate("home");
+    Router.navigate('home');
+
   }
 
 }
